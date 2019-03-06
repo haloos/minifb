@@ -24,23 +24,24 @@ var newsFeed = [
   }
 ];
 
-function signIn(username, password) {
+function isUserValid(username, password) {
   for (var i=0; i < database.length; i++) {
-      if(database[i].username === username &&
-          database[i].password === password) {
-            console.log(newsfeed);
-          } else {
-            alert("Sorry, wrong username and password");
-          }
+    if(database[i].username === username &&
+        database[i].password === password) {
+          return true;
+        } 
+    } return false; 
+}
+
+function signIn(username, password) {
+  if (isUserValid(username, password)) {
+       console.log(newsFeed); 
+     } else {
+      alert("Sorry, wrong username and password!"); 
   }
- 
-  // if (user === database[0].username && 
-  //   pass === database[0].password) {
-  //     console.log(newsfeed); 
-  //   } else {
-  //     alert("Sorry, wrong username and password!"); 
-    }
-// }
+}
+
+
 
 var userNamePromt = prompt("What\'s your username?");
 var passwordPromt = prompt("What\'s your password?");
