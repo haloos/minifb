@@ -1,2 +1,2 @@
 # minifb
-A less intimidating way on how facebook works
+<h3>A less intimidating way on how facebook works</h3>
